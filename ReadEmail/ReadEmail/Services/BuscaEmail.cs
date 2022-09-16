@@ -7,7 +7,7 @@ namespace ReadEmail.Services
 {
     public class BuscaEmail
     {
-        public async Task<List<CorpoEmail>> Buscar(string? nome_servidor_pop = "email-ssl.com.br", int porta = 995, string? email = "contato@cmdsistemas.dev.br", string? senha = "CmdSistemas@2022")
+        public async Task<List<CorpoEmail>> Buscar(string nome_servidor_pop, int porta, string email, string senha)
         {
             var emailT = new List<CorpoEmail>();
             string text = "";
