@@ -12,5 +12,7 @@ namespace ELEmail.Models
         public bool Ssl { get; set; }
         public bool Tsl { get; set; }
         public int Porta { get; set; }
+        public string Email { get; set; }
+        public string Senha { get; set; }
     }
 }
