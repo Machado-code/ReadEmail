@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using ReadEmail.Models;
-using ReadEmail.Services;
+using ELEmail.Models;
+using ELEmail.Services;
 
-namespace ReadEmail.Controllers
+namespace ELEmail.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

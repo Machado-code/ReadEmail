@@ -1,4 +1,4 @@
-﻿namespace ReadEmail.Models
+﻿namespace ELEmail.Models
 {
     public class CorpoEmail
     {

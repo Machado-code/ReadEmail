@@ -1,9 +1,9 @@
 ﻿using OpenPop.Mime;
 using OpenPop.Mime.Header;
 using OpenPop.Pop3;
-using ReadEmail.Models;
+using ELEmail.Models;
 
-namespace ReadEmail.Services
+namespace ELEmail.Services
 {
     public class BuscaEmail
     {
