@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using ELEmail.Data;
 using ELEmail.Models;
+using ELEmail.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,7 +15,7 @@ builder.Services.AddSwaggerGen();
 
 #region DbContext/Scoped
 builder.Services.AddDbContext<AppDbContext>(options => options.UseNpgsql(builder.Configuration.GetConnectionString("CMDConnectionString")));
-builder.Services.AddScoped<ProvedorEmail>();
+builder.Services.AddScoped<ProvedorEmailServices>();
 #endregion
 
 var app = builder.Build();

@@ -17,7 +17,7 @@ namespace ELEmail.Data.DbContexts
                 p.HasKey(e => e.IdProvedor);
                 p.Property(e => e.IdProvedor).UseIdentityAlwaysColumn();
 
-                p.Property(e => e.IdCliente).HasColumnType("varchar(10)");
+                p.Property(e => e.Cliente).HasColumnType("varchar(30)");
 
                 p.Property(e => e.Provedor).HasColumnType("varchar(30)");
 

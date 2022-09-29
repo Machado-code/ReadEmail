@@ -3,6 +3,7 @@ using System;
 using ELEmail.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,10 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace ELEmail.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220929000627_CMDEasyLeadsAlterNameTable_V1.0.0.1")]
+    partial class CMDEasyLeadsAlterNameTable_V1001
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -56,7 +58,7 @@ namespace ELEmail.Migrations
 
                     b.HasKey("IdCaptura");
 
-                    b.ToTable("cmd_captura_emails");
+                    b.ToTable("cmdCapturaEmails");
                 });
 
             modelBuilder.Entity("ELEmail.Models.Consumidor", b =>
@@ -81,7 +83,7 @@ namespace ELEmail.Migrations
 
                     b.HasKey("IdConsumidor");
 
-                    b.ToTable("cmd_consumidor");
+                    b.ToTable("cmdConsumidor");
                 });
 
             modelBuilder.Entity("ELEmail.Models.EmailConsumidor", b =>
@@ -112,7 +114,7 @@ namespace ELEmail.Migrations
 
                     b.HasKey("IdEmail");
 
-                    b.ToTable("cmd_email_consumidor");
+                    b.ToTable("cmdEmailConsumidor");
                 });
 
             modelBuilder.Entity("ELEmail.Models.ProvedorEmail", b =>
@@ -124,18 +126,22 @@ namespace ELEmail.Migrations
                     NpgsqlPropertyBuilderExtensions.UseIdentityAlwaysColumn(b.Property<int>("IdProvedor"));
 
                     b.Property<string>("Cliente")
-                        .HasColumnType("varchar(30)");
+                        .IsRequired()
+                        .HasColumnType("varchar(10)");
 
                     b.Property<string>("Email")
+                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<int>("Porta")
                         .HasColumnType("int");
 
                     b.Property<string>("Provedor")
+                        .IsRequired()
                         .HasColumnType("varchar(30)");
 
                     b.Property<string>("Senha")
+                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<bool>("Ssl")
@@ -146,7 +152,7 @@ namespace ELEmail.Migrations
 
                     b.HasKey("IdProvedor");
 
-                    b.ToTable("cmd_provedor_email");
+                    b.ToTable("cmdProvedorEmail");
                 });
 #pragma warning restore 612, 618
         }

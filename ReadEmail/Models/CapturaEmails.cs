@@ -2,7 +2,7 @@
 
 namespace ELEmail.Models
 {
-    [Table("CapturaEmails")]
+    [Table("cmd_captura_emails")]
     public class CapturaEmails
     {
         public int IdCaptura { get; set; }

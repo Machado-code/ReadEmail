@@ -10,13 +10,13 @@ namespace ELEmail.Controllers
     public class ReadEmailController : ControllerBase
     {
         [HttpPost("buscaremails")]
-        public async Task<ActionResult<IEnumerable<CorpoEmail>>> BuscarEmail([FromForm] ProvedorEmail provedorEmail)
+        public async Task<ActionResult<IEnumerable<CorpoEmail>>> BuscarEmail()
         {
             try
             {
                 BuscaEmail buscar_email = new BuscaEmail();
                 List<CorpoEmail> listaCorpo = new List<CorpoEmail>();
-                listaCorpo = await buscar_email.Buscar(provedorEmail.ServidorEntradaPop, provedorEmail.Porta, provedorEmail.Email, provedorEmail.Senha);
+                listaCorpo = await buscar_email.Buscar();
 
                 return listaCorpo;
             }

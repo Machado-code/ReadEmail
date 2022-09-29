@@ -3,6 +3,7 @@ using System;
 using ELEmail.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,10 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace ELEmail.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220929001040_CMDEasyLeadsAlterNameTable_V1.0.0.2")]
+    partial class CMDEasyLeadsAlterNameTable_V1002
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -124,18 +126,22 @@ namespace ELEmail.Migrations
                     NpgsqlPropertyBuilderExtensions.UseIdentityAlwaysColumn(b.Property<int>("IdProvedor"));
 
                     b.Property<string>("Cliente")
-                        .HasColumnType("varchar(30)");
+                        .IsRequired()
+                        .HasColumnType("varchar(10)");
 
                     b.Property<string>("Email")
+                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<int>("Porta")
                         .HasColumnType("int");
 
                     b.Property<string>("Provedor")
+                        .IsRequired()
                         .HasColumnType("varchar(30)");
 
                     b.Property<string>("Senha")
+                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<bool>("Ssl")

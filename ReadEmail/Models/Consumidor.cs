@@ -2,13 +2,13 @@
 
 namespace ELEmail.Models
 {
-    [Table("Consumidor")]
+    [Table("cmd_consumidor")]
     public class Consumidor
     {
         public int IdConsumidor { get; set; }
         public int IdEmail { get; set; }
-        public string Nome { get; set; }
-        public string Telefone { get; set; }
-        public string Email { get; set; }
+        public string? Nome { get; set; }
+        public string? Telefone { get; set; }
+        public string? Email { get; set; }
     }
 }
